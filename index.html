@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abbosjon Karshiev</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body >
+   <ul><li><a href="">News</a></li>
+    <li><a href="">News</a></li>
+    <li><a href="">News</a></li>
+    <li><a href="">News</a></li></ul>
+    
+    <div id="container">
+    <section id="name-container"> <h1 id="name">Abbosjon</h1>
+    <h1 id="surname"> Karshiev</h1></section>
+    <section id="avatar-container"> <img id="avatar" src="avatar-6.png"></section>
+    <section id="about-me-container"><p id="about-me">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto neque excepturi praesentium esse harum quo eaque reiciendis repudiandae pariatur. Facere quo nihil deserunt dolore reiciendis vero est ea sunt numquam!</p></section>
+    </div>
+
+
+<script>
+
+window.addEventListener('scroll',()=>{
+
+const yPosition = window.scrollY
+const namePosition = document.getElementById("name-container")
+const avatar  = document.getElementById("avatar-container")
+if(yPosition>100){
+namePosition.style.opacity=0
+avatar.style.transition= "opacity 1s "
+avatar.style.opacity=1
+
+
+}else{
+    avatar.style.opacity=0
+    namePosition.style.opacity=1
+    namePosition.style.transition= "opacity 1s "
+}
+
+
+})
+
+
+</script>
+</body>
+</html>
