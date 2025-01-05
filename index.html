@@ -5,42 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abbosjon Karshiev</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Add styles for the toggle list */
-        #projects-toggle {
-            display: none;
-            list-style-type: none;
-            padding: 0;
-            margin: 10px 0;
-        }
-
-        #projects-toggle li {
-            margin: 5px 0;
-        }
-
-        #projects-toggle li a {
-            text-decoration: none;
-            color: #007BFF;
-        }
-
-        #projects-toggle li a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
     <ul>
         <li><a href="#">Nav</a></li>
         <li><a href="#">Nav</a></li>
         <li><a href="#">Nav</a></li>
-        <li>
-            <a href="#" id="projects-link">Projects</a>
-            <ul id="projects-toggle">
-                <li><a href="#">Computer Networks Questions</a></li>
-                <li><a href="#">Project 2</a></li>
-                <li><a href="#">Project 3</a></li>
-            </ul>
-        </li>
+        <li><a href="projects.html">Projects</a></li> <!-- Link to the new file -->
     </ul>
     
     <div id="container">
@@ -57,19 +28,6 @@
     </div>
 
     <script>
-        // Toggle visibility of the projects list
-        const projectsLink = document.getElementById('projects-link');
-        const projectsToggle = document.getElementById('projects-toggle');
-
-        projectsLink.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent default link behavior
-            if (projectsToggle.style.display === 'block') {
-                projectsToggle.style.display = 'none';
-            } else {
-                projectsToggle.style.display = 'block';
-            }
-        });
-
         // Existing scroll effect
         window.addEventListener('scroll', () => {
             const yPosition = window.scrollY;
