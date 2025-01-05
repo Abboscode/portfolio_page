@@ -4,45 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abbosjon Karshiev</title>
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add styles for the toggle list */
+        #projects-toggle {
+            display: none;
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        #projects-toggle li {
+            margin: 5px 0;
+        }
+
+        #projects-toggle li a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        #projects-toggle li a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body >
-   <ul><li><a href="">Nav</a></li>
-    <li><a href="">Nav</a></li>
-    <li><a href="">Nav</a></li>
-    <li><a href="">nav</a></li></ul>
+<body>
+    <ul>
+        <li><a href="#">Nav</a></li>
+        <li><a href="#">Nav</a></li>
+        <li><a href="#">Nav</a></li>
+        <li>
+            <a href="#" id="projects-link">Projects</a>
+            <ul id="projects-toggle">
+                <li><a href="#">Computer Networks Questions</a></li>
+                <li><a href="#">Project 2</a></li>
+                <li><a href="#">Project 3</a></li>
+            </ul>
+        </li>
+    </ul>
     
     <div id="container">
-    <section id="name-container"> <h1 id="name">Abbosjon</h1>
-    <h1 id="surname"> Karshiev</h1></section>
-    <section id="avatar-container"> <img id="avatar" src="avatar-6.png"></section>
-    <section id="about-me-container"><p id="about-me">I am a 27-year-old engineering student with a strong passion for technology. Recognizing the significant deficit of highly skilled technical educators in my country, I am committed to educating and empowering the youth to embrace the potential of technology. My aspiration is to gain experience in technologically advanced nations and subsequently share this knowledge with young individuals in my home country. I believe that technology is pivotal to future development, and I am dedicated to contributing to this progress by fostering a new generation of skilled professionals.</p></section>
+        <section id="name-container">
+            <h1 id="name">Abbosjon</h1>
+            <h1 id="surname">Karshiev</h1>
+        </section>
+        <section id="avatar-container">
+            <img id="avatar" src="avatar-6.png" alt="Avatar">
+        </section>
+        <section id="about-me-container">
+            <p id="about-me">I am a 27-year-old engineering student with a strong passion for technology. Recognizing the significant deficit of highly skilled technical educators in my country, I am committed to educating and empowering the youth to embrace the potential of technology. My aspiration is to gain experience in technologically advanced nations and subsequently share this knowledge with young individuals in my home country. I believe that technology is pivotal to future development, and I am dedicated to contributing to this progress by fostering a new generation of skilled professionals.</p>
+        </section>
     </div>
 
+    <script>
+        // Toggle visibility of the projects list
+        const projectsLink = document.getElementById('projects-link');
+        const projectsToggle = document.getElementById('projects-toggle');
 
-<script>
+        projectsLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default link behavior
+            if (projectsToggle.style.display === 'block') {
+                projectsToggle.style.display = 'none';
+            } else {
+                projectsToggle.style.display = 'block';
+            }
+        });
 
-window.addEventListener('scroll',()=>{
+        // Existing scroll effect
+        window.addEventListener('scroll', () => {
+            const yPosition = window.scrollY;
+            const namePosition = document.getElementById("name-container");
+            const avatar = document.getElementById("avatar-container");
 
-const yPosition = window.scrollY
-const namePosition = document.getElementById("name-container")
-const avatar  = document.getElementById("avatar-container")
-if(yPosition>100){
-namePosition.style.opacity=0
-avatar.style.transition= "opacity 1s "
-avatar.style.opacity=1
-
-
-}else{
-    avatar.style.opacity=0
-    namePosition.style.opacity=1
-    namePosition.style.transition= "opacity 1s "
-}
-
-
-})
-
-
-</script>
+            if (yPosition > 100) {
+                namePosition.style.opacity = 0;
+                avatar.style.transition = "opacity 1s";
+                avatar.style.opacity = 1;
+            } else {
+                avatar.style.opacity = 0;
+                namePosition.style.opacity = 1;
+                namePosition.style.transition = "opacity 1s";
+            }
+        });
+    </script>
 </body>
 </html>
