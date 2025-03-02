@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Abbosjon Karshiev</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <ul>
-        <li><a href="#">Nav</a></li>
-        <li><a href="#">Nav</a></li>
-        <li><a href="#">Nav</a></li>
-        <li><a href="projects.html">Projects</a></li> <!-- Link to the new file -->
-    </ul>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="#">Nav</a></li>
+            <li><a href="#">Nav</a></li>
+            <li><a href="#">Nav</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
+    </nav>
     
     <div id="container">
         <section id="name-container">
@@ -20,7 +22,7 @@
             <h1 id="surname">Karshiev</h1>
         </section>
         <section id="avatar-container">
-            <img id="avatar" src="avatar-6.png" alt="Avatar">
+            <img id="avatar" src="avatar-6.png" alt="Avatar" loading="lazy">
         </section>
         <section id="about-me-container">
             <p id="about-me">I am a 27-year-old engineering student with a strong passion for technology. Recognizing the significant deficit of highly skilled technical educators in my country, I am committed to educating and empowering the youth to embrace the potential of technology. My aspiration is to gain experience in technologically advanced nations and subsequently share this knowledge with young individuals in my home country. I believe that technology is pivotal to future development, and I am dedicated to contributing to this progress by fostering a new generation of skilled professionals.</p>
@@ -28,22 +30,33 @@
     </div>
 
     <script>
-        // Existing scroll effect
+        // Improved scroll effect with mobile compatibility
+        let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const yPosition = window.scrollY;
             const namePosition = document.getElementById("name-container");
             const avatar = document.getElementById("avatar-container");
 
-            if (yPosition > 100) {
-                namePosition.style.opacity = 0;
-                avatar.style.transition = "opacity 1s";
-                avatar.style.opacity = 1;
-            } else {
-                avatar.style.opacity = 0;
-                namePosition.style.opacity = 1;
-                namePosition.style.transition = "opacity 1s";
+            // Add throttle for mobile performance
+            if (Date.now() - lastScroll > 100) {
+                if (yPosition > 100) {
+                    namePosition.style.opacity = 0;
+                    avatar.style.opacity = 1;
+                } else {
+                    avatar.style.opacity = 0;
+                    namePosition.style.opacity = 1;
+                }
+                lastScroll = Date.now();
             }
         });
+
+        // Handle mobile viewport height
+        function setViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
     </script>
 </body>
 </html>

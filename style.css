@@ -1,123 +1,147 @@
-
-
-#name-container{
-display: flex;
-justify-content: center;
-padding-top: 200px;
-
-border-radius: 100px;
-width: fit-content; 
-margin-left: 25%;
-
-}
-#name{
-font-family: sans-serif;
-font-size: 100px;
-text-shadow: black 4px 4px ;
-opacity: 0.7;
-color:#6CB4EE;
-transition:color 1s,text-shadow 1s ease-in-out ;
-
-width: fit-content;
-    height: fit-content;
-
-}
-#name:hover{
-
-color: black;
-text-shadow: white 4px 4px ;
-
-}
-#surname{
-    
-    font-family: sans-serif;
-    font-size: 100px;
-    text-shadow: rgb(158, 126, 126) 4px 4px;
-    opacity: 0.7;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-right: 10px;
-    color: #0d023b;
-    background-color:#f7fbff;
-    background-color: ;
-    width: fit-content;
-    height: fit-content;
-    }
-
-#container{
-
-    background-color:#002D62;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    height: 1400px;
+:root {
+  --vh: 1vh;
+  --max-content-width: 1200px;
 }
 
-#avatar-container{
-    
-    display: flex;
-    justify-content: center;
-
-    width: fit-content;
-  
-    margin-left: 30%; 
-    margin-top: 0   ;
-    padding: 0px;
-   opacity:0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#avatar{
-width: 700px;
-height: 800px;
-opacity: .9;
-border-radius: 100px;
-
-
+body {
+  background-color: #002D62;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  overflow-x: hidden;
 }
 
-#about-me-container{
-display: flex;
-    justify-content: right;
-    width: 500px;
-    margin-left: 30%;
+/* Navigation */
+nav {
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  background: #002D62;
+  z-index: 1000;
 }
 
-#about-me{
-
-    color: wheat;
-    font-size: larger;
-    font-stretch: wider;
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 0 1rem;
 }
 
-ul {
-    list-style-type: none; /* Remove default bullet points */
-    background-color:#002D62;
-    color: white;
-
+li {
+  padding: 0.75rem 1.25rem;
+  font-size: 1.1rem;
+  color: white;
+  transition: all 0.3s ease-in-out;
 }
+
+/* Main Content */
+#container {
+  background-color: #002D62;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
+#name-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: var(--max-content-width);
+  transition: opacity 0.3s ease-in-out;
+}
+
+#name, #surname {
+  font-family: sans-serif;
+  text-shadow: black 4px 4px;
+  opacity: 0.7;
+  color: #6CB4EE;
+  transition: all 0.3s ease-in-out;
+  font-size: clamp(3rem, 10vw, 6rem);
+  line-height: 1;
+  text-align: center;
+}
+
+#surname {
+  color: #0d023b;
+  background-color: #f7fbff;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+}
+
+#avatar-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem auto;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#avatar {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  opacity: 0.9;
+  border-radius: 100px;
+}
+
+#about-me-container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  padding: 2rem 1rem;
+}
+
+#about-me {
+  color: wheat;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+      gap: 0.75rem;
+      justify-content: space-around;
+  }
   
   li {
-    padding: 10px;
-    font-size: 20px;
-    color:white;
-    display:inline;
+      padding: 0.5rem;
+      font-size: 1rem;
+  }
 
-    transition: color .3s ease-in-out;
+  #name-container {
+      padding-top: 4rem;
+  }
+
+  #surname {
+      padding: 0.25rem 0.5rem;
+      border-radius: 8px;
+  }
+
+  #avatar {
+      border-radius: 50px;
+  }
 }
-  body{
-    background-color:#002D62;
 
+@media (max-width: 480px) {
+  #name, #surname {
+      font-size: 2.5rem;
   }
 
-  li:hover{
-    color: #e9e520;
+  #avatar {
+      border-radius: 30px;
   }
-  a{  text-decoration: none;
-    color: inherit;
-    padding: 0;
-    margin: 0;
-    font: inherit; /* Inherit the font family and size from parent */
-    background: none; /* Removes any background if applied */
-    border: none;
- }
+}
