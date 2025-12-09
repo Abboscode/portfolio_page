@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
             <li><a href="projects.html">Projects</a></li>
         </ul>
     </nav>
-    
+
     <div id="container">
         <section id="name-container">
             <h1 id="name">Abbosjon</h1>
@@ -28,7 +29,6 @@
             <p id="about-me">I am a 27-year-old engineering student with a strong passion for technology. Recognizing the significant deficit of highly skilled technical educators in my country, I am committed to educating and empowering the youth to embrace the potential of technology. My aspiration is to gain experience in technologically advanced nations and subsequently share this knowledge with young individuals in my home country. I believe that technology is pivotal to future development, and I am dedicated to contributing to this progress by fostering a new generation of skilled professionals.</p>
         </section>
     </div>
-
     <script>
         // Improved scroll effect with mobile compatibility
         let lastScroll = 0;
@@ -36,7 +36,6 @@
             const yPosition = window.scrollY;
             const namePosition = document.getElementById("name-container");
             const avatar = document.getElementById("avatar-container");
-
             // Add throttle for mobile performance
             if (Date.now() - lastScroll > 100) {
                 if (yPosition > 100) {
@@ -49,14 +48,265 @@
                 lastScroll = Date.now();
             }
         });
-
         // Handle mobile viewport height
         function setViewportHeight() {
             let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            document.documentElement.style.setProperty('--vh', ${vh}px);
         }
         setViewportHeight();
         window.addEventListener('resize', setViewportHeight);
     </script>
+</body>
+</html>:root {
+  --vh: 1vh;
+  --max-content-width: 1200px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: 
+#002D62;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  overflow-x: hidden;
+}
+/* Navigation */
+nav {
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  background: 
+#002D62;
+  z-index: 1000;
+}
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 0 1rem;
+}
+li {
+  padding: 0.75rem 1.25rem;
+  font-size: 1.1rem;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+/* Main Content */
+#container {
+  background-color: 
+#002D62;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+#name-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: var(--max-content-width);
+  transition: opacity 0.3s ease-in-out;
+}
+#name, #surname {
+  font-family: sans-serif;
+  text-shadow: black 4px 4px;
+  opacity: 0.7;
+  color: 
+#6CB4EE;
+  transition: all 0.3s ease-in-out;
+  font-size: clamp(3rem, 10vw, 6rem);
+  line-height: 1;
+  text-align: center;
+}
+#surname {
+  color: 
+#0d023b;
+  background-color: 
+#f7fbff;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+}
+#avatar-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem auto;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+#avatar {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  opacity: 0.9;
+  border-radius: 100px;
+}
+#about-me-container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  padding: 2rem 1rem;
+}
+#about-me {
+  color: wheat;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .nav-list {
+      gap: 0.75rem;
+      justify-content: space-around;
+  }
+
+  li {
+      padding: 0.5rem;
+      font-size: 1rem;
+  }
+  #name-container {
+      padding-top: 4rem;
+  }
+  #surname {
+      padding: 0.25rem 0.5rem;
+      border-radius: 8px;
+  }
+  #avatar {
+      border-radius: 50px;
+  }
+}
+@media (max-width: 480px) {
+  #name, #surname {
+      font-size: 2.5rem;
+  }
+  #avatar {
+      border-radius: 30px;
+  }
+}, imporove it with good styling , it is my personal web page i use as CV
+
+Show more
+Abbosjon Karshiev - CV
+Interactive artifact 
+I've enhanced your personal CV website with modern, professional styling. Here are the key improvements:
+
+Visual Enhancements:
+
+Gradient background with animated floating particles for depth
+Glassmorphism effect on cards and sections
+Smooth animations (slide-in, fade-up) for content
+Glowing effects around the avatar
+Scroll progress bar at the top
+Hover effects with smooth transitions
+Navigation:
+
+Sticky navigation with blur backdrop
+Animated hover effects with shimmer
+Better spacing and modern button styling
+Content Layout:
+
+Improved typography with better hierarchy
+Drop cap on the first letter of your bio
+Added highlight cards showcasing your education, vision, and mission
+Better contrast and readability
+Interactions:
+
+Smooth scroll-triggered transitions
+Parallax effect on avatar
+Responsive hover states
+Request animation frame for better performance
+Mobile Optimization:
+
+Fully responsive grid system
+Touch-friendly navigation
+Optimized font sizes and spacing
+Maintained all viewport fixes
+The design now has a more premium, contemporary feel while maintaining excellent readability and professionalism suitable for a CV/portfolio. The color scheme stays true to your original blue theme but with enhanced depth and visual interest.
+
+REFACTOR STYLES INTO OTHER FILE
+
+Abbosjon Karshiev - CV
+Interactive artifact 
+Now I'll create the separate CSS file:
+
+style.css
+Code 
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Abbosjon Karshiev - Engineering Student</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    
+    <div class="bg-particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 16s;"></div>
+    </div>
+
+    <nav>
+        <ul class="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
+    </nav>
+    
+    <div id="container">
+        <section id="name-container">
+            <h1 id="name">Abbosjon</h1>
+            <h1 id="surname">Karshiev</h1>
+        </section>
+        
+        <section id="avatar-container">
+            <img id="avatar" src="avatar-6.png" alt="Abbosjon Karshiev - Engineering Student" loading="lazy">
+        </section>
+        
+        <section id="about-me-container">
+            <p id="about-me">I am a 27-year-old engineering student with a strong passion for technology. Recognizing the significant deficit of highly skilled technical educators in my country, I am committed to educating and empowering the youth to embrace the potential of technology. My aspiration is to gain experience in technologically advanced nations and subsequently share this knowledge with young individuals in my home country. I believe that technology is pivotal to future development, and I am dedicated to contributing to this progress by fostering a new generation of skilled professionals.</p>
+        </section>
+
+        <div class="highlights">
+            <div class="highlight-card">
+                <h3>🎓 Education</h3>
+                <p>Engineering student focused on technology and innovation, constantly learning and adapting to new challenges.</p>
+            </div>
+            <div class="highlight-card">
+                <h3>💡 Vision</h3>
+                <p>Dedicated to bridging the skills gap in technical education and empowering the next generation through knowledge sharing.</p>
+            </div>
+            <div class="highlight-card">
+                <h3>🌍 Mission</h3>
+                <p>Gaining international experience to bring cutting-edge technological expertise back to my community.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
