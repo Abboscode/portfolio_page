@@ -244,13 +244,14 @@ nav {
 }
 
 #about-me {
-    color: var(--wheat);
-    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-    line-height: 1.8;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: justify;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  line-height: 1.75;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: justify;
+  color: #f1f1f1; /* optional: improves contrast on dark backgrounds */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #about-me::first-letter {
@@ -367,4 +368,38 @@ nav {
     #about-me {
         text-align: left;
     }
+}
+
+/* Project links */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.project-btn {
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(108, 180, 238, 0.4);
+    backdrop-filter: blur(6px);
+}
+
+.project-btn.live {
+    color: white;
+    background: linear-gradient(135deg, var(--accent-blue), var(--light-blue));
+}
+
+.project-btn.github {
+    color: var(--light-blue);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.project-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(108, 180, 238, 0.4);
 }
